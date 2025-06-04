@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <div id="quote-box" style="text-align: center; font-style: italic; margin-top: 20px;">
-    <p>Загружаю цитату...</p>
-  </div>
-
   <div class="theme-buttons">
     <button id="colorBtn" title="Toggle Theme">🌙</button>
     <button id="audioBtn" title="Play Sound">🔊</button>
@@ -28,7 +24,9 @@
       </ul>
     </nav>
   </header>
-
+  <div id="quote-box" style="text-align: center; font-style: italic; margin-top: 20px;">
+    <p>Searching for the meaning of life...</p>
+  </div>
   <main class="container my-5">
     <div class="row g-4">
       <div class="col-md-4">
@@ -85,7 +83,7 @@
   })
   .catch(err => {
     console.error(err);
-    document.getElementById('quote-box').innerText = "Цитата не загрузилась 😭";
+    document.getElementById('quote-box').innerText = "Motivation Error 😭";
   });
 </script>
 <script src="js/script.js"></script>
