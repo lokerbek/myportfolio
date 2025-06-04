@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background, #f8f9fa);
+            color: var(--text, #212529);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: var(--secondary, #5E8BFF);
+            color: var(--active-text, #121212);
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-hover, #4a7dff);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode {
+            --background: #0F0F15;
+            --text: #E5E5EA;
+            --primary: #1C1C2A;
+            --secondary: #5E8BFF;
+            --card-bg: #1A1A24;
+            --shadow: rgba(0, 0, 0, 0.5);
+            --hr-color: #2D2D3A;
+            --active-text: #121212;
+            --secondary-hover: #6d95ff;
+        }
+
+        h1 {
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>404 - Page Not Found</h1>
+    <button id="soundBtn" class="btn">Play Sound</button>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    const soundBtn = document.getElementById("soundBtn");
+
+    soundBtn.addEventListener("click", () => {
+        try {
+            const audio = new Audio("audio/pip.mp3");
+            audio.play().catch(e => {
+                console.error("Error playing sound:", e);
+                soundBtn.textContent = "Error playing sound";
+                setTimeout(() => {
+                    soundBtn.textContent = "Play Sound";
+                }, 2000);
+            });
+        } catch (e) {
+            console.error("Error:", e);
+            soundBtn.textContent = "Error";
+        }
+    });
+</script>
+</body>
+</html>

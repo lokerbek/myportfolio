@@ -1,0 +1,289 @@
+:root {
+  --primary: #F8E1F4;      /* light pink */
+  --secondary: #B5D0F2;    /* soft blue */
+  --background: #F0F4FF;   /* pastel base */
+  --text: #5D3A9B;         /* violet / muted purple */
+  --card-bg: #FFFFFF;      /* white cards */
+  --shadow: rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+
+  --header-dark: #5D3A9B;  /* фиолетовый для тёмной темы */
+}
+
+/* BAZA */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* шапка */
+header {
+  background-color: var(--primary);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* ава */
+.avatar-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  margin-left: auto;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* навигационный вот этот бар */
+nav ul {
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--text) !important;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--secondary);
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* карты секции */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1.5rem;
+  border: none;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+section.card {
+  margin-bottom: 1.5rem;
+}
+
+/* Formы */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(181, 208, 242, 0.3);
+}
+
+/* Buttonы */
+.btn {
+  background-color: var(--secondary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--text);
+  color: var(--primary);
+}
+
+.mb-2 {
+  color: var(--text) !important;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.mb-2:hover,
+.mb-2.active {
+  background-color: var(--secondary);
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+.active-highlight {
+  background-color: var(--secondary);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons .btn {
+  flex: 1 1 calc(33.33% - 0.75rem);
+  min-width: 120px;
+}
+
+#toggle-socials {
+  width: 100%;
+  min-width: 120px;
+}
+
+#random-btn {
+  width: 100%;
+  min-width: 120px;
+}
+
+/* кнопки 6 ассик */
+.theme-buttons {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 9999;
+}
+
+.theme-buttons button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: var(--transition);
+}
+
+.theme-buttons button:hover {
+  background-color: var(--text);
+  color: var(--primary);
+}
+/* темная темка */
+body.dark-mode {
+  --background: #0F0F15;
+  --text: #E5E5EA;
+  --primary: #1C1C2A;
+  --secondary: #5E8BFF;
+  --card-bg: #1A1A24;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --hr-color: #2D2D3A;
+  --active-text: #121212;
+}
+
+/* база цветов текстов */
+body.dark-mode,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode .card,
+body.dark-mode .nav-link {
+  color: var(--text) !important;
+}
+
+/* темная шапка */
+body.dark-mode header,
+.dark .site-header {
+  background-color: var(--primary) !important;
+  color: white;
+}
+
+.dark .site-header h1,
+.dark .site-header p {
+  color: white;
+}
+
+/* навиг темная темка */
+body.dark-mode .nav-link.active,
+body.dark-mode .mb-2.active,
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  background-color: var(--secondary);
+  color: var(--active-text) !important;
+  font-weight: bold;
+}
+
+/* карты темная темка */
+body.dark-mode .card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+body.dark-mode hr {
+  border: 0;
+  height: 1px;
+  background: var(--hr-color);
+}
+
+/* кнопки темной темки */
+body.dark-mode .btn {
+  background: var(--secondary);
+  color: var(--active-text);
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #2a2a2a;
+  color: var(--text);
+  border-color: #444;
+}

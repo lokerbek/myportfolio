@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="theme-buttons">
+  <button id="colorBtn" title="Toggle Theme">🌙</button>
+  <button id="audioBtn" title="Play Sound">🔊</button>
+</div>
+
+<header class="bg-light py-4">
+  <div class="container text-center">
+    <h1 class="mb-3">Contact</h1>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h2 class="mb-4 fs-4" id="name-title">Contact Form</h2>
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="example@mail.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" rows="4" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h2 class="mb-4 fs-4" id="greeting">Additional Actions</h2>
+
+          <button id="toggle-socials" class="btn btn-outline-primary mb-3">Show Socials</button>
+          <ul id="socials" class="list-unstyled fs-6" style="display: none;">
+            <li class="mb-2"><a href="404.html">Instagram – @lokerbek</a></li>
+            <li class="mb-2"><a href="404.html">Telegram – @lokerbek</a></li>
+            <li class="mb-2"><a href="404.html">LinkedIn – /in/lokerbek</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/main.jquery.js"></script>
+</body>
+</html>

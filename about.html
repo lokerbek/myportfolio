@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="theme-buttons">
+  <button id="colorBtn" title="Toggle Theme">🌙</button>
+  <button id="audioBtn" title="Play Sound">🔊</button>
+</div>
+
+<header class="bg-light py-4">
+  <div class="container text-center">
+    <h1 class="mb-3" id="name-title">About Me</h1>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <section class="card h-100 shadow-sm p-3">
+        <h2 class="fs-4">Bio</h2>
+        <p>Hi! I'm Almat, a student of Big Data Analysis at Astana IT University. I vibe with absurd memes, frontend dev, illogical thoughts  and SMM content like it's first, second and tenth nature 😎</p>
+      </section>
+    </div>
+
+    <div class="col-md-4">
+      <section class="card h-100 shadow-sm p-3">
+        <h2 class="fs-4">Info</h2>
+        <ul class="mb-0">
+          <li>📍 Location: Astana</li>
+          <li>🎓 University: AITU</li>
+          <li>🧠 Passion: Procrastination, Degradation, Testing anything</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="col-md-4">
+      <section class="card h-100 shadow-sm p-3">
+        <h2 class="fs-4">Core Skills</h2>
+        <ul class="mb-0">
+          <li>HTML / CSS</li>
+          <li>Java & SQL & C++</li>
+          <li>FL Studio</li>
+          <li>Social Media Management</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <section class="card shadow-sm p-4">
+        <h3 class="fs-4">Student Information</h3>
+        <div id="js-output" class="mb-3"></div>
+      </section>
+    </div>
+
+    <div class="col-md-6">
+      <section class="card shadow-sm p-4">
+        <h3 class="fs-4">Random Skills Showcase</h3>
+        <button id="random-skills-btn" class="btn btn-primary mb-3">Generate New Skills</button>
+        <div id="random-skills-output">
+          <div class="card">
+            <div class="card-body">
+              <ul class="list-group" id="skills-list">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
