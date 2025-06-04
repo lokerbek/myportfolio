@@ -72,25 +72,26 @@
   </main>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch('https://zenquotes.io/api/random')
-        .then(res => {
-          if (!res.ok) throw new Error("Сервер не ответил как надо");
-          return res.json();
-        })
-        .then(data => {
-          document.getElementById('quote-box').innerHTML = `
-            <p>"${data.content}"</p>
-            <p>— ${data.author}</p>
-          `;
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('quote-box').innerText = "Цитата не загрузилась 😭";
-        });
-    });
-  </script>
-
-  <script src="js/script.js"></script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch('https://zenquotes.io/api/random')
+      .then(res => {
+        if (!res.ok) throw new Error("Сервер ответил ошибкой");
+        return res.json();
+      })
+      .then(data => {
+        const quote = data[0].q;
+        const author = data[0].a;
+        document.getElementById('quote-box').innerHTML = `
+          <p>"${quote}"</p>
+          <p>— ${author}</p>
+        `;
+      })
+      .catch(error => {
+        console.error("Ошибка при получении цитаты:", error);
+        document.getElementById('quote-box').innerText = "Цитата не загрузилась 😭";
+      });
+  });
+</script>
+<script src="js/script.js"></script>
 </body>
 </html>
