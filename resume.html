@@ -7,22 +7,27 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
-  <div id="quote-box" style="margin-top: 30px; font-style: italic; text-align: center;">
-  <p>Searching for the meaning of life...</p>
+<div id="quote-box" style="text-align: center; font-style: italic; margin-top: 20px;">
+  <p>Загружаю цитату...</p>
 </div>
-
 <script>
-  fetch('https://api.quotable.io/random')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('quote-box').innerHTML = `
-        <p>"${data.content}"</p>
-        <p>— ${data.author}</p>
-      `;
-    })
-    .catch(() => {
-      document.getElementById('quote-box').innerText = "Motivation Error";
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch('https://api.quotable.io/random')
+      .then(res => {
+        if (!res.ok) throw new Error("Сервер не ответил как надо");
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('quote-box').innerHTML = `
+          <p>"${data.content}"</p>
+          <p>— ${data.author}</p>
+        `;
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('quote-box').innerText = "Цитата не загрузилась 😭";
+      });
+  });
 </script>
 
 <body>
